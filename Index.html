@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CC DET4iLS</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            text-align: center;
+            font-family: Arial;
+        }
+
+        h1 {
+            margin-top: 40px;
+            color: #ccc;
+        }
+
+        .menu {
+            margin-top: 30px;
+        }
+
+        .glass {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 25px;
+            border-radius: 10px;
+            color: #00ccff;
+            border: 1px solid rgba(0,150,255,0.5);
+            background: rgba(255,255,255,0.05);
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: rgba(0,150,255,0.3);
+            color: white;
+        }
+
+        .glow {
+            color: #00ccff;
+            font-size: 35px;
+            text-shadow: 0 0 10px #00ccff;
+            margin-top: 20px;
+        }
+
+        .section {
+            display: none;
+        }
+
+        /* PROOF */
+        .gallery img {
+            width: 200px;
+            margin: 10px;
+            border-radius: 10px;
+            border: 1px solid white;
+        }
+
+        /* CARDS */
+        .card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(0,150,255,0.3);
+            margin: 10px auto;
+            padding: 15px;
+            width: 80%;
+            border-radius: 10px;
+        }
+
+        /* CONTACT */
+        .contact-btn {
+            display: block;
+            margin: 15px auto;
+            padding: 12px;
+            width: 70%;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+            background: rgba(0,150,255,0.3);
+        }
+
+        .contact-btn:hover {
+            background: #00ccff;
+            color: black;
+        }
+
+        /* HACKER TEXT */
+        #hackerText {
+            color: #00ff00;
+            font-family: monospace;
+            font-size: 18px;
+            border-right: 2px solid #00ff00;
+            display: inline-block;
+            padding-right: 5px;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+    </style>
+
+    <script>
+        function showSection(id) {
+            document.getElementById("proofSection").style.display = "none";
+            document.getElementById("ccSection").style.display = "none";
+            document.getElementById("contactSection").style.display = "none";
+
+            document.getElementById(id).style.display = "block";
+        }
+
+        // hacker typing
+        const text = ">> HELLO I'AM ASHU💀";
+        let i = 0;
+
+        function typeEffect() {
+            let el = document.getElementById("hackerText");
+
+            function typing() {
+                if (i < text.length) {
+                    el.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(typing, 40);
+                }
+            }
+
+            typing();
+        }
+
+        window.onload = function() {
+            showSection('proofSection');
+            typeEffect();
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>CC DET4iLS</h1>
+
+    <div class="menu glass">
+        <a class="btn" onclick="showSection('proofSection')">📂 PROOFS</a>
+        <a class="btn" onclick="showSection('ccSection')">💳 CC DETAILS</a>
+        <a class="btn" onclick="showSection('contactSection')">📞 CONTACT</a>
+    </div>
+
+    <div class="glow">TRUSTED SERVICE</div>
+
+    <div id="hackerText"></div>
+
+    <!-- PROOFS -->
+    <div id="proofSection" class="section glass gallery">
+        <h2>Proof Images</h2>
+
+        <img src="cc1.jpg">
+        <img src="cc2.jpg">
+        <img src="cc3.jpg">
+        <img src="cc4.jpg">
+        <img src="cc5.jpg">
+        <img src="cc6.jpg">
+        <img src="cc7.jpg">
+        <img src="cc8.jpg">
+        <img src="cc9.jpg">
+        <img src="cc10.jpg">
+        <img src="cc11.jpg">
+        <img src="cc12.jpg">
+        <img src="cc13.jpg">
+        <img src="cc14.jpg">
+        <img src="cc15.jpg">
+        <img src="cc16.jpg">
+        <img src="cc17.jpg">
+        <img src="cc18.jpg">
+    </div>
+
+    <!-- CC DETAILS -->
+    <div id="ccSection" class="section glass">
+        <h2>CC DETAILS</h2>
+
+        <div class="card">💳 VISA - ₹399</div>
+        <div class="card">💳 MASTER CARD - ₹599</div>
+        <div class="card">💳 PLATINUM - ₹999</div>
+        <div class="card">💳 SILVER - ₹1299</div>
+        <div class="card">💳 GOLD - ₹1599</div>
+        <div class="card">💳 AMERICAN EXPRESS - ₹1999</div>
+        <div class="card">💳 BLACK CARD - ₹2499</div>
+    </div>
+
+    <!-- CONTACT -->
+    <div id="contactSection" class="section glass">
+        <h2>📞 Contact Me</h2>
+
+        <a class="contact-btn" href="+919919667539" target="_blank">
+            💬 WhatsApp Me :- 9919667539
+        </a>
+
+        <a class="contact-btn" href="ashutosh.8887.my@gmail.com">
+            📧 Send Email :- ashutosh.8887.my@gmail.com
+        </a>
+
+    </div>
+
+</body>
+</html>
